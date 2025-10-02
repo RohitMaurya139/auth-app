@@ -8,7 +8,11 @@ dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 4000
-const allowedOrigins = ["http://localhost:5173", "http://localhost:5174"];
+const allowedOrigins = [
+  "https://auth-app-frontend-bvvc.onrender.com",
+  "http://localhost:5173",
+  "http://localhost:5174",
+];
 
 // CORS middleware for REST API
 app.use(
