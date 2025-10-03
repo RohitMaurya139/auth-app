@@ -4,11 +4,9 @@ const userSchema = new mongoose.Schema(
   {
     firstName: {
       type: String,
-      required: true,
     },
     lastName: {
       type: String,
-      required: true,
     },
     email: {
       type: String,
@@ -17,8 +15,14 @@ const userSchema = new mongoose.Schema(
     },
     password: {
       type: String,
-      required: true,
       minlength: 8,
+      select: false, // don't return by default
+    },
+    googleId: {
+      type: String, // for Google users
+    },
+    picture: {
+      type: String, // profile picture from Google
     },
   },
   { timestamps: true }
@@ -27,3 +31,5 @@ const userSchema = new mongoose.Schema(
 const User = mongoose.model("User", userSchema);
 
 export default User;
+
+
