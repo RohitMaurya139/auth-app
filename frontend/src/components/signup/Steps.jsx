@@ -1,7 +1,6 @@
 
 import { CircleCheck, Mail, RectangleEllipsis, User } from 'lucide-react';
 import React from 'react'
-import logo from "../../assets/logo.png";
 const Steps = ({ changeTab }) => {
   const steps = [
     {
@@ -33,7 +32,7 @@ const Steps = ({ changeTab }) => {
   return (
     <div className="flex w-full gap-y-6 flex-col bg-[#F9FAFB] px-3 py-8 ">
       <div>
-        <img src={logo} alt="logo" width="64" height="64" />
+        <img src="/Logo.png" alt="logo" width="64" height="64" />
       </div>
       <div>
         <ul className="flex flex-col gap-4">

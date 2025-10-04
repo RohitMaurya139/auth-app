@@ -3,7 +3,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import { UserContext } from "../context/UserContext";
-import loginImg from "../assets/loginImg.png"; 
 import logo from "../assets/Logo.png"; 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -58,13 +57,13 @@ const Login = () => {
     <div className="min-h-screen flex items-center justify-around bg-white px-4">
       <div className="bg-white p-8 rounded-2xl w-full max-w-md h-[500px]">
         <div className="flex justify-center">
-          <img src={logo} className="w-72px h-72px" />
+          <img src={logo} className="w-[50px] h-[50px]" />
         </div>
-        <h1 className="text-3xl font-bold text-center mb-4 text-md text-gray-800">
+        <h1 className="text-2xl font-bold text-center mb-2 text-md text-gray-800">
           Log in to your account
         </h1>
         <div className="flex justify-center">
-          <p className="text-gray-600 text-sm text-center mb-3 w-[300px]">
+          <p className="text-gray-600 text-sm text-center mb-3 max-w-md leading-relaxed px-2">
             The login page prioritizes user security, offering a seamless
             experience that ensures quick and convenient access to the system's
             array of benefits.
@@ -113,11 +112,17 @@ const Login = () => {
 
           {/* Google Login */}
           <div className="flex justify-center">
-            <GoogleLogin onSuccess={handleSuccess} onError={handleError} />
+            <GoogleLogin
+              onSuccess={handleSuccess}
+              onError={handleError}
+              theme="outline"
+              shape="pill" // makes it rounded
+              size="large"
+            />
           </div>
         </form>
 
-        <p className="text-center text-gray-600  text-sm">
+        <p className="text-center text-gray-600  text-sm mt-2">
           Don&apos;t have an account?{" "}
           <a href="/signup" className="text-blue-500 hover:underline">
             Register
@@ -125,7 +130,7 @@ const Login = () => {
         </p>
       </div>
       <div className=" w-full max-w-md">
-        <img src={loginImg} className=" w-full rounded-lg " />
+        <img src="/loginImg.jpg" className=" w-full rounded-lg " />
       </div>
     </div>
   );
